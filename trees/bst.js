@@ -3,6 +3,8 @@ class Node {
 		this.val = value;
 		this.leftChild = null;
 		this.rightChild = null;
+        this.queue = [];
+        this.output = [];
 	}
 }
 class BinarySearchTree {
@@ -28,7 +30,8 @@ class BinarySearchTree {
 		}
 		this.insert(this.root, newValue);
 	}
-    
+
+	// Pre-order transversal
 	preOrderPrint(currentNode) {
 		if (currentNode !== null) {
 			console.log(currentNode.val);
@@ -37,6 +40,7 @@ class BinarySearchTree {
 		}
 	}
 
+	// In-order transversal
 	inOrderPrint(currentNode) {
 		if (currentNode !== null) {
 			this.inOrderPrint(currentNode.leftChild);
@@ -44,7 +48,36 @@ class BinarySearchTree {
 			this.inOrderPrint(currentNode.rightChild);
 		}
 	}
+
+	// Post-order transversal
+	postOrderPrint(currentNode) {
+		if (currentNode !== null) {
+			this.postOrderPrint(currentNode.leftChild);
+			this.postOrderPrint(currentNode.rightChild);
+			console.log(currentNode.val);
+		}
+	}
+
+	// Breadth first transversal
+	traverseBFS() {
+		if (!this.root) return;
+		this.queue = [];
+		this.queue.push(this.root);
+		this.output = [];
+		while (this.queue.length) {
+			const node = this.queue.shift();
+			if (node.left) {
+				this.queue.push(node.left);
+			}
+			if (node.right) {
+				this.queue.push(node.right);
+			}
+			this.output.push(node.data);
+		}
+		return this.output;
+	}
 }
+
 var BST = new BinarySearchTree(6);
 console.log('The root val for BST : ', BST.root.val);
 BST.insertBST(4);
