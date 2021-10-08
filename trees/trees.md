@@ -39,3 +39,29 @@ The height of a node is the number of edges in the longest path from a node to a
 *Degree* 
 
 The degree of a node refers to the number of sub-trees.
+
+
+*Why do we use trees?*
+
+Trees can be applied to many things. The hierarchical structure gives a tree unique properties for storing, manipulating, and accessing data. Trees form some of the most basic organization of computers. We can use a tree for the following:
+
+- Storage as hierarchy. 
+
+Storing information that naturally occurs in a hierarchy. File systems on a computer and PDF use tree structures.
+- Searching. 
+
+Storing information that we want to search quickly. Trees are easier to search than a Linked List. Some types of trees (like AVL and Red-Black trees) are designed for fast searching.
+- Inheritance. 
+
+Trees are used for inheritance, XML parser, machine learning, and DNS, amongst many other things.
+
+- Indexing. 
+
+Advanced types of trees, like B-Trees and B+ Trees, can be used for indexing a database.
+- Networking. 
+
+Trees are ideal for things like social networking and computer chess games.
+- Shortest path.
+
+A Spanning Tree can be used to find the shortest paths in routers for networking.
+and much more
